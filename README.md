@@ -237,7 +237,7 @@ to create a comprehensive, standalone learning resource.
 
 ## 📄 License
 
-**CC BY-NC-ND 4.0** © 2026 [Prawin Kumar](https://github.com/prawin)
+**CC BY-NC-ND 4.0** © 2026 [Prawin Kumar](https://github.com/prawinin)
 
 - ✅ **Learn freely** — use this for personal education
 - ✅ **Share** — redistribute the original, unmodified material
