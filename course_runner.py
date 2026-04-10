@@ -72,7 +72,7 @@ except ImportError:
 # Console Setup
 # ---------------------------------------------------------------------------
 console = Console()
-TERM_WIDTH = min(shutil.get_terminal_size().columns, 100)
+TERM_WIDTH = shutil.get_terminal_size().columns
 
 # ---------------------------------------------------------------------------
 # Color Palette — Deep, vibrant, modern
@@ -305,7 +305,7 @@ def discover_lessons() -> list:
 def extract_lesson_title(filepath: str) -> str:
     """Pull the lesson title from the docstring header."""
     with open(filepath, 'r', encoding='utf-8') as f:
-        content = f.read(500)
+        content = f.read(1000)
     match = re.search(r'Lesson \d+:\s*(.+)', content)
     if match:
         return match.group(1).strip()
@@ -730,9 +730,9 @@ def show_main_menu(lessons: list, progress: dict) -> str:
 
     table.add_column("#", justify="center", width=4, style=f"bold {ACCENT}")
     table.add_column("", width=3)  # Status
-    table.add_column("Lesson", min_width=30)
-    table.add_column("Difficulty", justify="center", width=14)
-    table.add_column("Time", justify="center", width=8, style=TEXT_SECONDARY)
+    table.add_column("Lesson", min_width=35, ratio=1)
+    table.add_column("Difficulty", justify="center", width=16)
+    table.add_column("Time", justify="center", width=10, style=TEXT_SECONDARY)
 
     for i, filepath in enumerate(lessons):
         filename = os.path.basename(filepath)
